@@ -62,13 +62,12 @@ function Fundraiser() {
             <div className="donationMeterSpace">
                 <div className="donationMeter">
                     <div style={{
-                        flexBasis: `${100 - progress}%`,
-                        backgroundColor: '#e7e7e7'
+                        flexBasis: `${100 - progress}%`
                     }}>
-                        <h3>${fundraiserGoal}</h3>
+                        <h3 className="fundraiserGoal">${fundraiserGoal}</h3>
                     </div>
 
-                    <div style={{ backgroundColor: 'rgba(165, 232, 151, 0.473)', flexBasis: `${progress}%`, }}>
+                    <div style={{ backgroundColor: '#A5E897', color: 'white', flexBasis: `${progress}%`, }}>
                         <h3>${fundraiserFunding}</h3>
                     </div>
                 </div>

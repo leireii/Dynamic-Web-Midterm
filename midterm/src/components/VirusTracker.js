@@ -6,8 +6,8 @@ import { useHistory } from 'react-router-dom';
 function VirusTracker() {
     const [countryID, setCountryID] = useState('us');
     const [statusID, setStatusID] = useState('confirmed');
-    const [cases, setCases] = useState('');
-    const [countryLabel, setCountryLabel] = useState('United States');
+    const [cases, setCases] = useState('...');
+    const [countryLabel, setCountryLabel] = useState('...');
     let history = useHistory();
 
     
@@ -17,12 +17,10 @@ function VirusTracker() {
         let urlParams = new URLSearchParams(searchParams);
 
         let countryID = urlParams.get('country');
-        console.log("countryID", countryID);
 
         if (countryID) {
             setCountryID(countryID);
         }
-        console.log("statusID", statusID);
 
 
 
@@ -33,11 +31,9 @@ function VirusTracker() {
                 // success
                 // live data is returned in list... choose last item in list (most recent data, based on perusal of documentation)
                 let responseList = response.data;
-                console.log(responseList);
                 let listPlace = (responseList.length) - 1;
                 setCases(responseList[listPlace].Cases);
                 setCountryLabel(responseList[listPlace].Country)
-                console.log("US", cases);
 
             })
             .catch(function (error) {
